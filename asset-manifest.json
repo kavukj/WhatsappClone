@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/WhatsappClone.github.io/static/css/main.a617e044.chunk.css",
-    "main.js": "/WhatsappClone.github.io/static/js/main.4e88dc05.chunk.js",
-    "main.js.map": "/WhatsappClone.github.io/static/js/main.4e88dc05.chunk.js.map",
+    "main.js": "/WhatsappClone.github.io/static/js/main.3ee7372e.chunk.js",
+    "main.js.map": "/WhatsappClone.github.io/static/js/main.3ee7372e.chunk.js.map",
     "runtime-main.js": "/WhatsappClone.github.io/static/js/runtime-main.22022bfc.js",
     "runtime-main.js.map": "/WhatsappClone.github.io/static/js/runtime-main.22022bfc.js.map",
-    "static/js/2.f4b7a39b.chunk.js": "/WhatsappClone.github.io/static/js/2.f4b7a39b.chunk.js",
-    "static/js/2.f4b7a39b.chunk.js.map": "/WhatsappClone.github.io/static/js/2.f4b7a39b.chunk.js.map",
+    "static/js/2.51fa6501.chunk.js": "/WhatsappClone.github.io/static/js/2.51fa6501.chunk.js",
+    "static/js/2.51fa6501.chunk.js.map": "/WhatsappClone.github.io/static/js/2.51fa6501.chunk.js.map",
     "static/js/3.42ad1d80.chunk.js": "/WhatsappClone.github.io/static/js/3.42ad1d80.chunk.js",
     "static/js/3.42ad1d80.chunk.js.map": "/WhatsappClone.github.io/static/js/3.42ad1d80.chunk.js.map",
     "index.html": "/WhatsappClone.github.io/index.html",
     "static/css/main.a617e044.chunk.css.map": "/WhatsappClone.github.io/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.f4b7a39b.chunk.js.LICENSE.txt": "/WhatsappClone.github.io/static/js/2.f4b7a39b.chunk.js.LICENSE.txt"
+    "static/js/2.51fa6501.chunk.js.LICENSE.txt": "/WhatsappClone.github.io/static/js/2.51fa6501.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.22022bfc.js",
-    "static/js/2.f4b7a39b.chunk.js",
+    "static/js/2.51fa6501.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.4e88dc05.chunk.js"
+    "static/js/main.3ee7372e.chunk.js"
   ]
 }
