@@ -1,22 +1,23 @@
 {
   "files": {
     "main.css": "/WhatsappClone.github.io/static/css/main.a617e044.chunk.css",
-    "main.js": "/WhatsappClone.github.io/static/js/main.3ee7372e.chunk.js",
-    "main.js.map": "/WhatsappClone.github.io/static/js/main.3ee7372e.chunk.js.map",
-    "runtime-main.js": "/WhatsappClone.github.io/static/js/runtime-main.22022bfc.js",
-    "runtime-main.js.map": "/WhatsappClone.github.io/static/js/runtime-main.22022bfc.js.map",
-    "static/js/2.51fa6501.chunk.js": "/WhatsappClone.github.io/static/js/2.51fa6501.chunk.js",
-    "static/js/2.51fa6501.chunk.js.map": "/WhatsappClone.github.io/static/js/2.51fa6501.chunk.js.map",
-    "static/js/3.42ad1d80.chunk.js": "/WhatsappClone.github.io/static/js/3.42ad1d80.chunk.js",
-    "static/js/3.42ad1d80.chunk.js.map": "/WhatsappClone.github.io/static/js/3.42ad1d80.chunk.js.map",
+    "main.js": "/WhatsappClone.github.io/static/js/main.50b08a3b.chunk.js",
+    "main.js.map": "/WhatsappClone.github.io/static/js/main.50b08a3b.chunk.js.map",
+    "runtime-main.js": "/WhatsappClone.github.io/static/js/runtime-main.7d837710.js",
+    "runtime-main.js.map": "/WhatsappClone.github.io/static/js/runtime-main.7d837710.js.map",
+    "static/js/2.5f82ac8c.chunk.js": "/WhatsappClone.github.io/static/js/2.5f82ac8c.chunk.js",
+    "static/js/2.5f82ac8c.chunk.js.map": "/WhatsappClone.github.io/static/js/2.5f82ac8c.chunk.js.map",
+    "static/js/3.b143bc44.chunk.js": "/WhatsappClone.github.io/static/js/3.b143bc44.chunk.js",
+    "static/js/3.b143bc44.chunk.js.map": "/WhatsappClone.github.io/static/js/3.b143bc44.chunk.js.map",
     "index.html": "/WhatsappClone.github.io/index.html",
     "static/css/main.a617e044.chunk.css.map": "/WhatsappClone.github.io/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.51fa6501.chunk.js.LICENSE.txt": "/WhatsappClone.github.io/static/js/2.51fa6501.chunk.js.LICENSE.txt"
+    "static/js/2.5f82ac8c.chunk.js.LICENSE.txt": "/WhatsappClone.github.io/static/js/2.5f82ac8c.chunk.js.LICENSE.txt",
+    "static/media/profile.5b2099a2.png": "/WhatsappClone.github.io/static/media/profile.5b2099a2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.22022bfc.js",
-    "static/js/2.51fa6501.chunk.js",
+    "static/js/runtime-main.7d837710.js",
+    "static/js/2.5f82ac8c.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.3ee7372e.chunk.js"
+    "static/js/main.50b08a3b.chunk.js"
   ]
 }
