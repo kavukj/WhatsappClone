@@ -1,1 +1,1 @@
-web : nodemon index.js
+web : concurrently \"nodemon index.js\" \"npm run client\"
