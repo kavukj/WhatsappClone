@@ -19,7 +19,7 @@ const username = process.env.MONGO_USER;
 const password = process.env.MONGO_PASS;
 Connection(username, password);
 
-const PORT = 8000;
+const PORT = 8000 || process.env.PORT;
 app.listen(PORT || process.env.PORT, () => {
     console.log(`Server connected on port ${PORT}`)
 })
