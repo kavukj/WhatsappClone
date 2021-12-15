@@ -7,7 +7,7 @@ import addUser from '../service/api';
 
 const style = {
     dialog: {
-        width: 900,
+        width: 1000,
         height: 900,
         maxHeight: '100%',
         maxWidth: '100%',
@@ -19,10 +19,10 @@ const style = {
 const usestyles = makeStyles((theme) => ({
     component: {
         display: "flex",
-        margin: "10vh 0 1vh 2vw"
+        margin: "10vh 0 1vh 2vw",
     },
     typography: {
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             fontSize: 21
         },
         fontSize: 24,
@@ -34,24 +34,25 @@ const usestyles = makeStyles((theme) => ({
     left: {
         margin: "0 2vw 0 0",
         width: "50vw",
-        [theme.breakpoints.down('md')]: {
-            width: "100vw"
+        [theme.breakpoints.down('sm')]: {
+            minWidth: "100vw"
         }
     },
     list: {
         '& > *': {
-            [theme.breakpoints.down('md')]: {
+            [theme.breakpoints.down('sm')]: {
                 fontSize: 10
             },
             fontSize: 18,
             lineHeight: "28px"
         },
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             margin: 0,
+
         }
     },
     bold: {
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             fontSize: 10,
             fontWeight: 700
         },
@@ -60,34 +61,40 @@ const usestyles = makeStyles((theme) => ({
         margin: "0 0.5vw 0 0.5vw"
     },
     right: {
-        position: "relative"
+        position: "relative",
+        [theme.breakpoints.down('sm')]: {
+            minWidth: '100vw',
+            right:"102vw",
+            top:"45vh"
+        }
     },
     qr: {
         width: '18vw',
         height: '35vh',
         margin: '0 3vw 0 0',
-        [theme.breakpoints.down('md')]: {
-            margin: "12vh 2vw 0 -5vw",
-            width: '20vw',
-            height: '20vh',
-
+        [theme.breakpoints.down('sm')]: {
+            margin: "2vh 2vw 0 5vw",
+            width:150,
+            height: 150
         }
     },
     link: {
         margin: "1vh 0 0 4vw",
-        [theme.breakpoints.down('md')]: {
-            margin: "1vh 0 0 -7vw",
-            fontSize: 9
+        [theme.breakpoints.down('sm')]: {
+            margin: "1vh 0 0 24px",
+            fontSize: 11
         }
     },
     checkbox: {
         color: "#00BFA5",
         '&.Mui-checked': {
             color: "#00BFA5",
+            marginTop:"-1px",
         },
         '& .MuiSvgIcon-root': { fontSize: 18 },
-        [theme.breakpoints.down('md')]: {
-            '& .MuiSvgIcon-root': { fontSize: 12 },
+        [theme.breakpoints.down('sm')]: {
+            marginTop:"-1px",
+            '& .MuiSvgIcon-root': { fontSize: 14 },
         }
     },
     google: {
@@ -96,11 +103,11 @@ const usestyles = makeStyles((theme) => ({
         top: "35%",
         width: "3vw",
         height: "6vh",
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             width: "8vw",
             height: "6vh",
-            left: "10%",
-            top: "50%",
+            left: "20%",
+            top: "30%",
         }
     },
     bottomSection: {
@@ -109,9 +116,9 @@ const usestyles = makeStyles((theme) => ({
         cursor: "pointer",
         fontWeight: 300,
         fontSize: 15,
-        [theme.breakpoints.down('md')]: {
-            margin: "2vh 0 0 5.5vw",
-            fontSize: 10
+        [theme.breakpoints.down('sm')]: {
+            margin: "-2vh 0 0 8vw",
+            fontSize: 12
 
         }
     }

@@ -8,9 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
     "server": "cd server && npm run dev",
-    "dev": "concurrently \"nodemon index.js\" \"npm run server\"",
-    
-    "deploy": "gh-pages -d dist"
+    "dev": "concurrently \"nodemon index.js\" \"npm run server\""
   },
   "author": "",
   "license": "ISC",
