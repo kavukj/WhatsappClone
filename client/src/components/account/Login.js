@@ -12,7 +12,7 @@ const style = {
         maxHeight: '100%',
         maxWidth: '100%',
         marginTop: '12%',
-        overflow: "hidden"
+        overflow: "hidden",
     }
 }
 
@@ -20,6 +20,7 @@ const usestyles = makeStyles((theme) => ({
     component: {
         display: "flex",
         margin: "10vh 0 1vh 2vw",
+        
     },
     typography: {
         [theme.breakpoints.down('sm')]: {
@@ -35,13 +36,13 @@ const usestyles = makeStyles((theme) => ({
         margin: "0 2vw 0 0",
         width: "50vw",
         [theme.breakpoints.down('sm')]: {
-            minWidth: "100vw"
+            minWidth: "80vw"
         }
     },
     list: {
         '& > *': {
             [theme.breakpoints.down('sm')]: {
-                fontSize: 10
+                fontSize: 11
             },
             fontSize: 18,
             lineHeight: "28px"
@@ -53,7 +54,7 @@ const usestyles = makeStyles((theme) => ({
     },
     bold: {
         [theme.breakpoints.down('sm')]: {
-            fontSize: 10,
+            fontSize: 11,
             fontWeight: 700
         },
         fontSize: 18,
@@ -64,8 +65,8 @@ const usestyles = makeStyles((theme) => ({
         position: "relative",
         [theme.breakpoints.down('sm')]: {
             minWidth: '100vw',
-            right:"102vw",
-            top:"45vh"
+            right:"68vw",
+            top:"270px"
         }
     },
     qr: {
