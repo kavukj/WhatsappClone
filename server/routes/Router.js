@@ -5,6 +5,10 @@ import user from '../model/User.js';
 
 const route = express.Router();
 
+route.get("/", (req, res) => {
+    res.send({ response: "Server is up and running." }).status(200);
+});
+
 route.post('/add', async (request, response) => {
     try {
         let exist = await user.findOne({ googleId: request.body.googleId })
@@ -66,7 +70,7 @@ route.post('/message/add', async (request, response) => {
     const newMessage = message(request.body);
     try {
         await newMessage.save();
-        await conversation.findByIdAndUpdate(request.body.conversationId,{message:request.body.text})
+        await conversation.findByIdAndUpdate(request.body.conversationId, { message: request.body.text })
         response.status(200).json("Message Sent")
     } catch (error) {
         console.log(error)
@@ -74,11 +78,11 @@ route.post('/message/add', async (request, response) => {
     }
 })
 
-route.get('/message/get/:id',async (request,response)=>{
-    try{
-        var messages = await message.find({conversationId:request.params.id})
+route.get('/message/get/:id', async (request, response) => {
+    try {
+        var messages = await message.find({ conversationId: request.params.id })
         response.status(200).json(messages)
-    }catch(error){
+    } catch (error) {
         console.log(error)
         response.status(500).json("No messages found for this id")
     }
