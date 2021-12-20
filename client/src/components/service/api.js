@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const Url = 'http://localhost:8000'
+const Url = 'https://whatsappcloneapp.herokuapp.com/'
 
 const addUser = async (data) => {
     try {

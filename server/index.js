@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import route from './routes/Router.js';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-
 //Cannot use import statement outside a module. We get this error for this type of import.
 //We need to write "type":"module" in package.json to resolve this.
 dotenv.config();
@@ -20,8 +19,9 @@ const username = process.env.MONGO_USER;
 const password = process.env.MONGO_PASS;
 Connection(username, password);
 
-const PORT = 8000 || process.env.PORT;
-app.listen(PORT || process.env.PORT, () => {
-    console.log(`Server connected on port ${PORT}`)
+app.listen(process.env.PORT || 5000, () => {
+    console.log(`Server connected`)
 })
+
+
 

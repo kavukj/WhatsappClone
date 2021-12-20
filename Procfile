@@ -1,1 +1,0 @@
-web :concurrently \"node index.js\" \"npm run server\"
