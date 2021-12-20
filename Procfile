@@ -1,1 +1,1 @@
-web : node index.js
+web :concurrently \"node index.js\" \"npm run server\"
