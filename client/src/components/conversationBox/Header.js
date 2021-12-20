@@ -7,14 +7,14 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const usestyles = makeStyles((theme) => ({
     header: {
-        height: 44,
+        height: "6vh",
         width: "100%",
         background: "#EDEDED",
         display: "flex",
         padding: 10,
         [theme.breakpoints.down('md')]: {
             padding: 8,
-            height: 40
+            height: "6.5vh"
         }
     },
     img: {

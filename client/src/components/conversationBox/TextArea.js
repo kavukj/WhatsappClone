@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Box, InputBase } from '@material-ui/core';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import MicIcon from '@material-ui/icons/Mic';
+import CloseIcon from '@material-ui/icons/Close';
 
 const usestyles = makeStyles((theme) => ({
     component: {
@@ -18,7 +19,11 @@ const usestyles = makeStyles((theme) => ({
             color: "#51585C",
             cursor: "pointer",
             fontSize: 25,
-            margin: 7
+            margin: 7,
+            [theme.breakpoints.down('sm')]: {
+                fontSize: 20,
+                marginLeft: 0
+            }
         }
     },
     rotate: {
@@ -28,7 +33,10 @@ const usestyles = makeStyles((theme) => ({
         background: "#FFFFFF",
         borderRadius: 18,
         width: "80%",
-        height: 30
+        height: 30,
+        [theme.breakpoints.down('sm')]: {
+            width: "60%"
+        }
     },
     inputRoot: {
         width: "100%",
@@ -42,13 +50,21 @@ const usestyles = makeStyles((theme) => ({
     }
 }))
 
-const TextArea = ({ sendText, setTextValue, textValue }) => {
+const TextArea = ({ sendText, setTextValue, textValue, openEmoji, setOpenEmoji }) => {
     const classes = usestyles();
+
+    const handleEmojiOpen = () => {
+        setOpenEmoji(true)
+    }
+    const handleEmojiClose = () => {
+        setOpenEmoji(false)
+    }
 
     return (
         <Box className={classes.component}>
             <Box className={classes.icons} style={{ minWidth: 80 }}>
-                <EmojiEmotionsOutlinedIcon />
+                {openEmoji ? <CloseIcon onClick={handleEmojiClose} /> : null}
+                <EmojiEmotionsOutlinedIcon onClick={handleEmojiOpen} />
                 <AttachFileIcon className={classes.rotate} />
             </Box>
             <Box className={classes.textArea}>

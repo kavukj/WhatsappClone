@@ -1,13 +1,18 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { makeStyles, Box} from '@material-ui/core';
+import { makeStyles, Box } from '@material-ui/core';
 import { AccountContext } from '../context/AccountContext';
 import { getConversation } from '../service/api';
 import Message from './Message';
 
 const usestyles = makeStyles((theme) => ({
     component: {
-        height:"79vh",
-        overflowY:"auto",
+        height: "79vh",
+        overflowY: "auto",
+        background: `url(${'https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'})`
+    },
+    ShortComponent:{
+        height: "59vh",
+        overflowY: "auto",
         background: `url(${'https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'})`
     },
     container: {
@@ -19,7 +24,7 @@ const usestyles = makeStyles((theme) => ({
 
 }))
 
-const Chat = ({ conversation , person}) => {
+const Chat = ({ conversation, person, openEmoji }) => {
     const classes = usestyles();
     const [messages, setMessages] = useState([]);
     const scrollRef = useRef();
@@ -49,12 +54,12 @@ const Chat = ({ conversation , person}) => {
         getMessages();
     }, [conversation?._id, newMessageFlag, person._id])
 
-    useEffect(()=>{
-        scrollRef.current?.scrollIntoView({transition:'smooth'})
-    },[messages])
+    useEffect(() => {
+        scrollRef.current?.scrollIntoView({ transition: 'smooth' })
+    }, [messages])
 
     return (
-        <Box className={classes.component}>
+        <Box className={openEmoji ? classes.ShortComponent : classes.component}>
             <Box className={classes.messageSection}>
                 {
                     messages && messages.map(message => (
@@ -64,7 +69,7 @@ const Chat = ({ conversation , person}) => {
                     ))
                 }
             </Box>
-            
+
         </Box>
 
     )
