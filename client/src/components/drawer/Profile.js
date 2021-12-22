@@ -1,13 +1,15 @@
 import { Box, Drawer, makeStyles, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AccountContext } from '../context/AccountContext';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import EditIcon from '@material-ui/icons/Edit';
+import DoneIcon from '@material-ui/icons/Done';
+import { addAbout, getUserDetails, updateAbout, updateName } from '../service/api';
 
 const style = (theme) => ({
     drawer: {
-        top: "1vw",
+        top: "1.2vh",
         left: "5vw",
         height: "95vh",
         minWidth: 360,
@@ -63,23 +65,79 @@ const usestyles = makeStyles((theme) => ({
         color: "#51585C",
         margin: 12,
         fontSize: 15,
+        height: "4vh",
+        overflowY: "hidden",
+        width: "80%",
+        display: "inline",
         marginLeft: 20,
         fontWeight: 100
     },
-    edit:{
-        fontSize:15,
-        float:"right",
-        color:"#51585C"
+    edit: {
+        marginTop: "0.5vh",
+        fontSize: 15,
+        paddingRight: "1vw",
+        float: "right",
+        color: "#51585C",
+        cursor: "pointer"
+    },
+    textArea: {
+        border: "none",
+        outline: "none",
+        width: "80%",
+        fontSize: 13,
+        borderBottom: "1px solid #00BFA5",
+        paddingBottom: "5px",
+        color: "#51585C",
     }
 }))
 
 const Profile = ({ drawerOpen, setDrawerOpen, classes }) => {
     const classname = usestyles();
     const { account } = useContext(AccountContext);
+    const [userDetails, setUserDetails] = useState();
+    const [aboutValue, setAboutValue] = useState('');
+    const [nameValue, setNameValue] = useState('');
+    const [hiddenAbout, setHiddenAbout] = useState(true);
+    const [hiddenName, setHiddenName] = useState(true);
 
     const handleClose = () => {
         setDrawerOpen(false)
     }
+
+    const editAbout = () => {
+        setHiddenAbout(!hiddenAbout)
+        setAboutValue(userDetails?.about)
+    }
+    const editName = () => {
+        setNameValue(userDetails?.name)
+        setHiddenName(!hiddenName)
+    }
+
+    useEffect(() => {
+        const getAboutValue = async () => {
+            const details = await getUserDetails({ id: account.googleId })
+            setUserDetails(details)
+        }
+        getAboutValue();
+    }, [hiddenAbout,hiddenName])
+
+    const handleAbout = (e) => {
+        setAboutValue(e.target.value)
+    }
+    const handleName = (e) => {
+        setNameValue(e.target.value)
+    }
+
+    const saveAbout = async (e) => {
+        setHiddenAbout(!hiddenAbout)
+        await updateAbout({ id: userDetails._id, textValue: aboutValue })
+    }
+
+    const saveName = async (e) => {
+        setHiddenName(!hiddenName)
+        await updateName({ id: userDetails._id, textValue: nameValue })
+    }
+
     return (
         <Drawer open={drawerOpen} onClose={handleClose} classes={{ paper: classes.drawer }}
             BackdropProps={{ style: { background: "unset" } }}>
@@ -92,16 +150,38 @@ const Profile = ({ drawerOpen, setDrawerOpen, classes }) => {
             </Box>
             <Box className={classname.name}>
                 <Typography className={classname.title}>Your Name</Typography>
-                <Typography className={classname.value}>{account.name}<EditIcon className={classname.edit}/></Typography>
+                <Typography style={{ width: "100%" }}>
+                <div className={classname.value}>
+                        {hiddenName ? userDetails?.name : <input type="text" className={classname.textArea} value={nameValue} onChange={handleName} />}
+                    </div>
+                    <Typography style={{ display: "inline" }}>
+                    {hiddenName ?
+                            <EditIcon className={classname.edit} onClick={editName} />
+                            :
+                            <DoneIcon className={classname.edit} onClick={saveName} />
+                        }
+                    </Typography>
+                </Typography>
             </Box>
             <Box className={classname.note}>
                 <Typography style={{ fontSize: 12 }}>This is not your username of pin. This will be visible to your WhatsApp contacts.</Typography>
             </Box>
             <Box className={classname.name}>
                 <Typography className={classname.title}>About</Typography>
-                <Typography className={classname.value}>Eat ! Sleep ! Repeat !<EditIcon className={classname.edit}/></Typography>
+                <Typography style={{ width: "100%" }}>
+                    <div className={classname.value}>
+                        {hiddenAbout ? userDetails?.about : <input type="text" className={classname.textArea} value={aboutValue} onChange={handleAbout} />}
+                    </div>
+                    <Typography style={{ display: "inline" }}>
+                        {hiddenAbout ?
+                            <EditIcon className={classname.edit} onClick={editAbout} />
+                            :
+                            <DoneIcon className={classname.edit} onClick={saveAbout} />
+                        }
+                    </Typography>
+                </Typography>
             </Box>
-        </Drawer>
+        </Drawer >
     )
 }
 

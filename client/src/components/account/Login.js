@@ -1,5 +1,5 @@
 import { withStyles, makeStyles, Checkbox, Dialog, Box, Typography, ListItem, List } from '@material-ui/core';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { AccountContext } from '../context/AccountContext';
 import { UserContext } from '../context/UserContext';
@@ -20,7 +20,7 @@ const usestyles = makeStyles((theme) => ({
     component: {
         display: "flex",
         margin: "10vh 0 1vh 2vw",
-        
+
     },
     typography: {
         [theme.breakpoints.down('sm')]: {
@@ -65,8 +65,8 @@ const usestyles = makeStyles((theme) => ({
         position: "relative",
         [theme.breakpoints.down('sm')]: {
             minWidth: '100vw',
-            right:"68vw",
-            top:"270px"
+            right: "68vw",
+            top: "270px"
         }
     },
     qr: {
@@ -75,7 +75,7 @@ const usestyles = makeStyles((theme) => ({
         margin: '0 3vw 0 0',
         [theme.breakpoints.down('sm')]: {
             margin: "2vh 2vw 0 5vw",
-            width:150,
+            width: 150,
             height: 150
         }
     },
@@ -90,11 +90,11 @@ const usestyles = makeStyles((theme) => ({
         color: "#00BFA5",
         '&.Mui-checked': {
             color: "#00BFA5",
-            marginTop:"-1px",
+            marginTop: "-1px",
         },
         '& .MuiSvgIcon-root': { fontSize: 18 },
         [theme.breakpoints.down('sm')]: {
-            marginTop:"-1px",
+            marginTop: "-1px",
             '& .MuiSvgIcon-root': { fontSize: 14 },
         }
     },
@@ -128,7 +128,7 @@ const usestyles = makeStyles((theme) => ({
 const Login = ({ classes }) => {
 
     const classname = usestyles();
-    const { setAccount } = useContext(AccountContext)
+    const { setAccount, account } = useContext(AccountContext)
     const { setnewUser } = useContext(UserContext);
 
     const onLoginFailure = (response) => {
@@ -141,6 +141,7 @@ const Login = ({ classes }) => {
         setnewUser(prev => !prev)
     }
 
+    
     return (
         <>
             <Dialog open={true} classes={{ paper: classes.dialog }}
@@ -172,13 +173,11 @@ const Login = ({ classes }) => {
                             <Checkbox className={classname.checkbox} defaultChecked color="secondary" />
                             &nbsp;Keep me signed in
                         </p>
-
                     </Box>
                 </Box>
                 <Box className={classname.bottomSection}>
                     <Box className={classes.left}>
                         <p>Need help to get started?</p>
-
                     </Box>
                 </Box>
             </Dialog>

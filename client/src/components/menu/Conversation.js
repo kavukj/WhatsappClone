@@ -33,7 +33,6 @@ const Conversation = ({ searchValue }) => {
 
     useEffect(() => {
         socket.current.emit('addUsers', account.googleId)
-        console.log(newUser)
         socket.current.on('getUsers', users => { setActiveUser(users) })
     }, [account])
 

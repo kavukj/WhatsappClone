@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.emoji-picker-react{
+  width: 100%!important;
+}

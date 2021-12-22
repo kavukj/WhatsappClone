@@ -11,7 +11,7 @@ const usestyles = makeStyles((theme) => ({
         background: `url(${'https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'})`
     },
     ShortComponent:{
-        height: "59vh",
+        height: "53vh",
         overflowY: "auto",
         background: `url(${'https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'})`
     },
@@ -63,7 +63,7 @@ const Chat = ({ conversation, person, openEmoji }) => {
             <Box className={classes.messageSection}>
                 {
                     messages && messages.map(message => (
-                        <Box className={classes.container} ref={scrollRef}>
+                        <Box key={message._id} className={classes.container} ref={scrollRef}>
                             <Message message={message} />
                         </Box>
                     ))

@@ -5,6 +5,9 @@ import Header from './Header';
 import Search from './Search';
 
 const usestyles = makeStyles({
+    root:{
+        marginTop:0
+    }
 })
 
 const Menu = () => {
