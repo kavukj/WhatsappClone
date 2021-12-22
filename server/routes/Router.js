@@ -24,6 +24,38 @@ route.post('/add', async (request, response) => {
     }
 })
 
+route.post('/userDetails', async (request, response) => {
+    try {
+        const userDetail = await user.findOne({ googleId: request.body.id })
+        response.status(200).json(userDetail)
+    } catch (error) {
+        response.status(500).json("Cannot find user")
+        console.log(error)
+    }
+})
+
+route.post('/update/about', async (request, response) => {
+    try {
+        await user.findByIdAndUpdate(request.body.id, { about: request.body.textValue })
+        response.status(200).json("About Updated")
+    }
+    catch (error) {
+        console.log(error)
+        response.status(500).json("Unable to update about status for user")
+    }
+})
+
+route.post('/update/name', async (request, response) => {
+    try {
+        await user.findByIdAndUpdate(request.body.id, { name: request.body.textValue })
+        response.status(200).json("Name Updated")
+    }
+    catch (error) {
+        console.log(error)
+        response.status(500).json("Unable to update name status for user")
+    }
+})
+
 route.get('/user', async (request, response) => {
     try {
         const users = await user.find({})

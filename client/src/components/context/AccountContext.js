@@ -11,7 +11,7 @@ const AccountProvider = ({ children }) => {
     const socket = useRef();
 
     useEffect(()=>{
-        socket.current =  io('http://whatsappclonesocket.herokuapp.com');
+        socket.current =  io('ws://localhost:9000');
     },[])
 
     return (

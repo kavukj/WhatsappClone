@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
     familyName:{
         type:String,
         required:true
+    },
+    about:{
+        type:String,
+        default: ''
     }
 })
 
